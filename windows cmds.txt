@@ -1,0 +1,4 @@
+mkdir name creates folder with 'name' name
+md name1 name2 name3 creates folders
+md ..\name creates 'name' in parent directory
+md name\nameInName creates 'nameInName' in 'name'
