@@ -1,61 +1,42 @@
-const test = () => {
-  // Functions
-  const add: (baseValue: number, increment: number) => number = (x, y = 2) => {
+  const add: (baseValue: number, increment: number) => number = (x, y) => {
     return x + y;
   };
-  const optionalAdd: (baseValue: number, increment?: number) => number = (
-      x,
-      y = 2
-  ) => {
+  const optionalAdd: (baseValue: number, increment?: number) => number = (x, y = 2) => {
     return x + y;
   };
   // Generics
-  function identity<T>(arg: T): T {
-    return arg;
-  }
-  let output = identity<string>("myString");
-  let output1 = identity("myString");
-
-  function loggingIdentity<T>(arg: T[]): T[] {
-    console.log(arg.length); // Array has a .length, so no more error
-    return arg;
-  }
-  function loggingIdentityAlternative<T>(arg: Array<T>): Array<T> {
-    console.log(arg.length); // Array has a .length, so no more error
-    return arg;
-  }
-
   interface GenericIdentityFn {
     <T>(arg: T): T;
   }
-
-  function identity3<T>(arg: T): T {
+  const identity: GenericIdentityFn = (arg) =>  {
     return arg;
   }
-};
+  
+  interface GivenIdentityFn<T> {
+    (arg: T): T;
+  }
+  interface IProps {
+    color: "string"
+  }
+  const identity: GivenIdentityFn<IProps> = (arg: IProps) =>  {
+    return arg;
+    // to get round invokation typification use identity(<IProps>{}) or identity({} as IProps) 
+  }
+  
+  function loggingIdentityAlternative<T>(arg: Array<T>): Array<T> {
+    // or alternative (arg: T[]): T[]
+    console.log(arg.length); // Array has a .length, so no more error
+    return arg;
+  }
 
-const UtilityTypes = () => {
-  // Partial<T>
-  interface Todo {
-    title: string,
-    desc: string
-  }
-  function updateTodo(todo: Todo, fieldsToUpd: Partial<Todo>): Todo {
-    return Object.assign(todo, fieldsToUpd);
-  }
-  const todo: Todo = {} as Todo;
-  const todo1: Todo = {
-    title: "do the hoovering",
-    desc: "title is self explanatory."
-  };
+// Advanced Types
+  // Partial<T> -- makes property unnecessary 
   // Readonly<T>
-  // Record<Page, PageInfo>
+  // Record<Page, PageInfo> -- creates new nested object with <Page> properties and values of <PageInfo> type 
   interface PageInfo {
     title: string;
   }
-
   type Page = 'home' | 'about' | 'contact';
-
   const x: Record<Page, PageInfo> = {
     about: { title: 'about' },
     contact: { title: 'contact' },
@@ -67,30 +48,12 @@ const UtilityTypes = () => {
     description: string;
     completed: boolean;
   }
-
-  type TodoPreview = Pick<Todo_, 'title' | 'completed'>;
-
-  const todo2: TodoPreview = {
-    title: 'Clean room',
-    completed: false,
-  };
+  type TodoPreview = Pick<Todo_, 'title' | 'completed'>; // type TodoPreview = 'title' | 'completed';
   // Exclude<T,U>
-  type T0 = Exclude<"a" | "b" | "c", "a">;  // "b" | "c"
   type T1 = Exclude<"a" | "b" | "c", "a" | "b">;  // "c"
   type T2 = Exclude<string | number | (() => void), Function>;  // string | number
   // Extract<T,U>
   type T3 = Extract<"a" | "b" | "c", "a" | "f">;  // "a"
-  type T4 = Extract<string | number | (() => void), Function>;  // () => void
-  // NonNullable<T>
-  // Constructs a type by excluding null and undefined from T
-  // ReturnType<T>
-  // Constructs a type consisting of the return type of function T.
-  // Required<T>
-  interface Props {
-    a?: number;
-    b?: string;
-  }
-  // const obj2: Required<Props> = { a: 5 }; // Error: property 'b' missing
-
-
-};
+  // NonNullable<T> -- Constructs a type by excluding null and undefined from T
+  // ReturnType<T> -- Constructs a type consisting of the return type of function T.
+  // Required<T> -- makes all unnecessary properties required
