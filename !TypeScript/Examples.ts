@@ -1,4 +1,16 @@
-  const add: (baseValue: number, increment: number) => number = (x, y) => {
+// -- readonly
+interface Point {
+  readonly x: number;
+  readonly y: number;
+}
+// custom properties
+interface SquareConfig {
+  color: string;
+  width: number;
+  [propname: string]: string | number;
+}
+// functions 
+const add: (baseValue: number, increment: number) => number = (x, y) => {
     return x + y;
   };
   const optionalAdd: (baseValue: number, increment?: number) => number = (x, y = 2) => {
@@ -30,7 +42,7 @@
   }
 
 // Advanced Types
-  // Partial<T> -- makes property unnecessary 
+  // Partial<T> -- makes propertis optinal
   // Readonly<T>
   // Record<Page, PageInfo> -- creates new nested object with <Page> properties and values of <PageInfo> type 
   interface PageInfo {
@@ -56,4 +68,4 @@
   type T3 = Extract<"a" | "b" | "c", "a" | "f">;  // "a"
   // NonNullable<T> -- Constructs a type by excluding null and undefined from T
   // ReturnType<T> -- Constructs a type consisting of the return type of function T.
-  // Required<T> -- makes all unnecessary properties required
+  // Required<T> -- makes all optional properties required
