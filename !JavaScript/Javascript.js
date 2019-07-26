@@ -3,7 +3,6 @@ const array = [];
 Array.isArray();
 Array.of();
 Array.from();
-array.split();
 array.join();
 array.indexOf();
 array.slice();
@@ -27,6 +26,7 @@ arr.includes();
 arr.sort();
 // ----- Strings
 const string = "";
+string.split();
 string.startsWith();
 string.endsWith();
 string.includes();
