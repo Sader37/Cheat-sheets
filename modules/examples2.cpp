@@ -1,4 +1,7 @@
 // Essential operations:
+#include <bitset>
+#include <iostream>
+using namespace std;
 
 class Vector {
 private:
