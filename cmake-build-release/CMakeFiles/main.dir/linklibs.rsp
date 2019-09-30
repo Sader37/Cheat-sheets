@@ -1,0 +1,1 @@
+"C:/Program Files/MySQL/MySQL Connector C++ 8.0/lib64/vs14/mysqlcppconn8.lib" -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
