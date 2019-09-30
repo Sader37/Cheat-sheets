@@ -1,6 +1,5 @@
 #include <iostream>
 #include <chrono>
-#include "hello.hpp"
 #include <xdevapi.h>
 
 using ::std::move;
@@ -8,7 +7,7 @@ using ::std::forward;
 using ::std::cout;
 using ::std::endl;
 using ::std::cerr;
-//using namespace mysqlx;
+using namespace mysqlx;
 
 //template <typename H, typename ...T>
 //void fc(H h , T...) {
@@ -24,8 +23,8 @@ using ::std::cerr;
 //}
 
 int main() {
-    hello::say_hello();
     void *ptr = malloc(sizeof(uint32_t));
+	cout << "Hello world!" << endl;
     //    try {
 //        const char *url = "mysqlx://root@127.0.0.1";
 //        cout << "Creating session on " << url
