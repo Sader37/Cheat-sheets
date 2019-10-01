@@ -13,7 +13,7 @@ include_directories(${MYSQL_CONN_DIR}/include/mysqlx)
 link_directories(${MYSQL_CONN_DIR}/lib64)
 link_directories(${MYSQL_CONN_DIR}/lib64/vs14)
 
-set(SOURCE_FILES main.cpp modules/examples2.cpp)
+set(SOURCE_FILES main.cpp)
 add_executable(main ${SOURCE_FILES})
 
 #target_link_libraries(main say-hello)

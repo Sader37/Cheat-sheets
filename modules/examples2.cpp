@@ -85,3 +85,4 @@ void print_bits(int i) {
     bitset<8*sizeof(int)> bs = i;
     cout << bs.to_string() << endl;
 }
+

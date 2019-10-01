@@ -1,3 +1,0 @@
-C:/programming/CPP_Cheats/cmake-build-release/CMakeFiles/edit_cache.dir
-C:/programming/CPP_Cheats/cmake-build-release/CMakeFiles/main.dir
-C:/programming/CPP_Cheats/cmake-build-release/CMakeFiles/rebuild_cache.dir

@@ -1,41 +1,18 @@
 #include <iostream>
 #include <chrono>
-#include <xdevapi.h>
+#include <unistd.h>
+#include <cmath>
+#include <iomanip>
+#include <type_traits>
 
-using ::std::move;
-using ::std::forward;
-using ::std::cout;
-using ::std::endl;
-using ::std::cerr;
-using namespace mysqlx;
+struct D{};
 
-//template <typename H, typename ...T>
-//void fc(H h , T...) {
-//    cout << h << endl;
-//    fc(T...);
-//
-//}
-
-//void accept_connection(Session *sess) {
-//    cout << "Session accepted, creating collection..." << endl;
-//    Schema sch = sess->getSchema("test");
-//    Collection coll = sch.createCollection("c1", true);
-//}
-
+using namespace std;
 int main() {
-    void *ptr = malloc(sizeof(uint32_t));
-	cout << "Hello world!" << endl;
-    //    try {
-//        const char *url = "mysqlx://root@127.0.0.1";
-//        cout << "Creating session on " << url
-//             << " ..." << endl;
-//        Session sess(url);
-//
-//        cout << "Done!" << endl;
-//        return 0;
-//    } catch (...) {
-//        cerr << "Unexpected error.";
-//    }
-//
+    bool a_ = is_class<D>();
+    bool a = is_arithmetic<int>();
+    cout << a_ << endl;
+    cout << a << endl;
+//    bool a = is_arithmetic<int>(1);
     return 0;
 }
