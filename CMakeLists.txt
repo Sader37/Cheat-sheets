@@ -17,5 +17,4 @@ set(SOURCE_FILES main.cpp)
 add_executable(main ${SOURCE_FILES})
 
 #target_link_libraries(main say-hello)
-target_link_libraries(main mysqlcppconn8-2-vs14.dll mysqlcppconn8.lib)
-
+target_link_libraries(main mysqlcppconn8.lib)
