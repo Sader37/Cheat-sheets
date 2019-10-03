@@ -1,4 +1,5 @@
 #include <iostream>
+#include <iterator>
 
 using namespace std;
 
@@ -11,6 +12,7 @@ template<typename T>
 using Iterator = typename T::iterator;
 
 template<typename C, typename V>
+// hides implementation of C — vector<Iterator<C>> instead of vector<typename C::iterator>
 vector<Iterator<C>> find_all (C &c, V v) {
     vector<Iterator<C>> res;
     // ..
