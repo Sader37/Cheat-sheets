@@ -63,3 +63,11 @@ void sqrt_equation(double a, double b, double c) {
     return two_square_radicals_case(a, b, disc);
 }
 
+// input : a = 0, b = 0, c = 1
+// output: Уравнение не имеет действительных корней
+// input : a = 1, b = 0, c = -4
+// output: Корни — x1 = -2, x2 = 2
+// input: a = 0, b = 1, c = 4
+// output Корень — x = -4
+// input a = 0, b = 0, c = 0
+// output Решением уравнения является любое значение
