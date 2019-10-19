@@ -76,13 +76,9 @@ int Vector::size() const {
 //    Vector e(move(c));
 //    e = move(d);
 //    b = a;
-//    cout << b.size() << "\n"; // 5
-//    cout << d.size() << "\n"; // 0
-//    cout << e.size() << "\n"; // 11
-//    cout << c.size() << "\n"; // 0
+//    cout << b.size() << endl; // 5
+//    cout << d.size() << endl; // 0
+//    cout << e.size() << endl; // 11
+//    cout << c.size() << endl; // 0
 
-void print_bits(int i) {
-    bitset<8*sizeof(int)> bs = i;
-    cout << bs.to_string() << endl;
-}
 
