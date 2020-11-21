@@ -1,5 +1,7 @@
 #include <iostream>
 #include <iterator>
+#include <vector>
+#include <memory>
 
 using namespace std;
 
